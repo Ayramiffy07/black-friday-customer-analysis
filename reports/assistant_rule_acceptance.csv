@@ -1,0 +1,16 @@
+﻿question,expected,actual,passed
+哪些年龄和性别的客群消费贡献最高？,answered,answered,True
+不同年龄和性别分别贡献多少消费额？,answered,answered,True
+消费贡献是什么意思？,definition,definition,True
+昨天哪个客群消费最高？,unsupported,unsupported,True
+本月消费趋势如何？,unsupported,unsupported,True
+用户复购率是多少？,unsupported,unsupported,True
+哪个客群利润最高？,unsupported,unsupported,True
+26–35岁男性消费贡献是多少？,answered,answered,True
+26–35岁女性消费贡献是多少？,answered,answered,True
+26至35岁女性占该年龄段消费额多少？,answered,answered,True
+20-30岁女性消费贡献是多少？,clarify,clarify,True
+26-35岁男性和女性消费贡献是多少？,clarify,clarify,True
+26-35岁女性占全体和该年龄段消费额多少？,clarify,clarify,True
+帮我分析一下,clarify,clarify,True
+,clarify,clarify,True

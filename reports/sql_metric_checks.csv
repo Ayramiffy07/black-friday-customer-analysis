@@ -1,0 +1,8 @@
+﻿check,passed
+database_row_count,True
+sql_vs_pandas_user_count,True
+sql_vs_pandas_record_count,True
+sql_vs_pandas_total_purchase,True
+sql_vs_pandas_average_purchase,True
+sql_vs_pandas_share_of_all_purchase,True
+contribution_sum_is_one,True
