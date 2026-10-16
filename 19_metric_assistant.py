@@ -4,6 +4,7 @@ import csv
 import re
 from pathlib import Path
 import sqlite3
+import metric_store
 
 
 ROOT = Path(__file__).resolve().parent
@@ -39,11 +40,11 @@ def answer(question):
         if within_age and any(word in q for word in ["全体", "全部", "总体"]):
             return {"status": "clarify", "answer": "请明确分母：全体用户消费额，还是该年龄段用户消费额？"}
         database = ROOT / "data/processed/retail.sqlite"
-        if not database.exists():
+        if not database.exists() and not (ROOT / "reports/sql_customer_contribution.csv").exists():
             return {"status": "error", "answer": "数据库尚未准备，请先运行 18_sql_metric_foundation.py。"}
         params = {"age": age, "gender": genders[0]}
-        query = "sql/selected_customer_contribution.sql"
-        with sqlite3.connect(database.as_uri() + "?mode=ro", uri=True) as connection:
+        query = metric_store.query_file(selected=True)
+        with metric_store.connect() as connection:
             connection.row_factory = sqlite3.Row
             row = dict(connection.execute((ROOT / query).read_text(encoding="utf-8"), params).fetchone())
         if not row["record_count"]:
@@ -56,16 +57,16 @@ def answer(question):
             "answer": f"{age} 岁{'男性' if genders[0] == 'M' else '女性'}：{row['user_count']:,} 名用户，累计消费 {row['total_purchase']:,}（原始数据单位），占{denominator} {row[field]:.2%}。",
             "evidence": [row], "query": query,
             "scope": f"全部观测记录；年龄={age}，性别={genders[0]}；所问占比的分母为{denominator}。无日期筛选。",
-            "source": "Kaggle Black Friday Dataset；本地 purchases 表。",
+            "source": metric_store.source_label(),
         }
     if any(word in q for word in ["贡献", "消费", "客群"]):
         if not any(word in q for word in ["最高", "排名", "哪些", "不同", "分别", "各", "贡献"]):
             return {"status": "clarify", "answer": "你想查询全体年龄×性别客群的消费贡献排名吗？"}
         database = ROOT / "data/processed/retail.sqlite"
-        if not database.exists():
+        if not database.exists() and not (ROOT / "reports/sql_customer_contribution.csv").exists():
             return {"status": "error", "answer": "数据库尚未准备，请先运行 18_sql_metric_foundation.py。"}
-        sql_path = ROOT / "sql/customer_contribution.sql"
-        with sqlite3.connect(database.as_uri() + "?mode=ro", uri=True) as connection:
+        sql_path = ROOT / metric_store.query_file()
+        with metric_store.connect() as connection:
             connection.row_factory = sqlite3.Row
             rows = [dict(row) for row in connection.execute(sql_path.read_text(encoding="utf-8"))]
         top = rows[0]
@@ -74,9 +75,9 @@ def answer(question):
             "status": "answered",
             "answer": f"按累计消费贡献排序，{top['age']} 岁{gender}客群排名第一：{top['user_count']:,} 名用户，累计消费 {top['total_purchase']:,}（原始数据单位），占全体消费额 {top['share_of_all_purchase']:.2%}。这不代表利润或未来价值。",
             "evidence": rows,
-            "query": "sql/customer_contribution.sql",
+            "query": metric_store.query_file(),
             "scope": "全部观测记录，按年龄×性别分组；没有日期筛选。",
-            "source": "Kaggle Black Friday Dataset；本地 purchases 表。",
+            "source": metric_store.source_label(),
         }
     return {"status": "clarify", "answer": "当前支持客群消费贡献排名与贡献口径解释。请改问：哪些客群消费贡献最高？"}
 
