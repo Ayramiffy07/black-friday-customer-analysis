@@ -1,0 +1,6 @@
+﻿id,group,question,mode,expected,actual,correct,numeric_match,elapsed_ms,prompt_tokens,completion_tokens,decision_source,model_called,error,plan
+H01,ranking,把各年龄与性别客群的消费贡献从高到低列一下,model,answered,answered,True,True,14429.42,473,24,validated_model_plan,True,,"{""intent"": ""ranking"", ""age"": null, ""gender"": null, ""denominator"": ""all"", ""reason"": null}"
+H02,paraphrase,18至25岁的姑娘在全部消费里占多少？,model,answered,answered,True,True,2264.72,470,26,validated_model_plan,True,,"{""intent"": ""segment"", ""age"": ""18-25"", ""gender"": ""F"", ""denominator"": ""all"", ""reason"": null}"
+H03,paraphrase,36到45岁男士的消费占这个年龄段总消费的比例？,model,answered,answered,True,True,2658.02,472,26,validated_model_plan,True,,"{""intent"": ""segment"", ""age"": ""36-45"", ""gender"": ""M"", ""denominator"": ""age"", ""reason"": null}"
+H04,segment,51-55岁女性消费贡献是多少？,model,answered,answered,True,True,2154.3,467,26,validated_model_plan,True,,"{""intent"": ""segment"", ""age"": ""51-55"", ""gender"": ""F"", ""denominator"": ""all"", ""reason"": null}"
+H05,segment,55+男性占该年龄段的消费几成？,model,answered,answered,True,True,3428.16,469,25,validated_model_plan,True,,"{""intent"": ""segment"", ""age"": ""55+"", ""gender"": ""M"", ""denominator"": ""age"", ""reason"": null}"

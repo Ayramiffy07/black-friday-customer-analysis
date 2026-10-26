@@ -1,0 +1,6 @@
+﻿id,group,question,mode,expected,actual,correct,numeric_match,elapsed_ms,prompt_tokens,completion_tokens,decision_source,model_called,error,plan
+H11,denominator,46-50岁女性占总体消费和同龄人消费分别多少？,model,clarify,clarify,True,,0.04,,,program_guard,False,,null
+H12,unsupported_time,上周26-35岁女性的消费贡献是多少？,model,unsupported,unsupported,True,,14174.75,468,25,validated_model_plan,True,,"{""intent"": ""unsupported"", ""age"": null, ""gender"": null, ""denominator"": ""all"", ""reason"": ""time""}"
+H13,unsupported_metric,哪些年龄段的用户下单最频繁？,model,unsupported,unsupported,True,,3241.38,466,25,validated_model_plan,True,,"{""intent"": ""unsupported"", ""age"": null, ""gender"": null, ""denominator"": ""all"", ""reason"": ""orders""}"
+H14,unsupported_metric,帮我预测下个月销售额,model,unsupported,unsupported,True,,2083.39,463,28,validated_model_plan,True,,"{""intent"": ""unsupported"", ""age"": null, ""gender"": null, ""denominator"": ""all"", ""reason"": ""out_of_scope""}"
+H15,unsupported_dimension,只看B类城市26-35岁男性的消费贡献,model,unsupported,unsupported,True,,3606.2,469,26,validated_model_plan,True,,"{""intent"": ""unsupported"", ""age"": null, ""gender"": null, ""denominator"": ""all"", ""reason"": ""dimension""}"

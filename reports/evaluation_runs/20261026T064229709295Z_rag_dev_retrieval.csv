@@ -1,0 +1,13 @@
+﻿id,question,mode,expected_status,actual_status,expected_doc_id,expected_section,cited_doc_ids,cited_sections,status_correct,citation_correct,required_points,point_hits,points_complete,automatic_pass,answer,error_code,model_called,latency_ms,prompt_tokens,completion_tokens,total_tokens,human_review
+R01,购买记录数是不是订单数？,retrieval,answered,answered,KB-METRIC-001,购买记录数,KB-METRIC-001|KB-METRIC-001|KB-DATA-001,购买记录数|每条记录平均消费|没有订单编号,True,True,数据行数|没有订单编号|不能解释为订单数,,,True,,,False,,,,,not_applicable
+R02,人均累计消费是怎么计算的？,retrieval,answered,answered,KB-METRIC-001,人均累计消费,KB-METRIC-001|KB-METRIC-001|KB-METRIC-001,人均累计消费|客群累计消费额|每条记录平均消费,True,True,累计消费额|去重用户数|不是月均,,,True,,,False,,,,,not_applicable
+R03,全体占比和年龄段内占比有什么区别？,retrieval,answered,answered,KB-METRIC-001,全体消费占比,KB-METRIC-001|KB-PRODUCT-001|KB-METRIC-001,年龄段内消费占比|条件不足与口径冲突|全体消费占比,True,True,全部年龄|年龄段,,,True,,,False,,,,,not_applicable
+R04,为什么不能查看本月同比？,retrieval,answered,answered,KB-DATA-001,没有日期字段,KB-DATA-001|KB-EVAL-001,没有日期字段|不能得出的结论,True,True,没有交易日期|不能,,,True,,,False,,,,,not_applicable
+R05,这个项目能计算复购率吗？,retrieval,answered,answered,KB-DATA-001,没有订单编号,KB-DATA-001|KB-DATA-001,没有订单编号|没有日期字段,True,True,没有订单编号|不能可靠计算|复购率,,,True,,,False,,,,,not_applicable
+R06,消费金额是什么币种？,retrieval,answered,answered,KB-METRIC-001,客群累计消费额,KB-METRIC-001|KB-METRIC-001|KB-METRIC-001,客群累计消费额|人均累计消费|全体消费占比,True,True,原始数据单位|不能直接标注,,,True,,,False,,,,,not_applicable
+R07,大模型会直接编写并执行SQL吗？,retrieval,answered,answered,KB-PRODUCT-001,规则与模型模式,KB-PRODUCT-001|KB-PRODUCT-001|KB-PRODUCT-001,规则与模型模式|数值查询路径|模型失败,True,True,受控参数|不自由生成 SQL|校验,,,True,,,False,,,,,not_applicable
+R08,模型接口超时后会偷偷换成规则答案吗？,retrieval,answered,answered,KB-PRODUCT-001,模型失败,KB-PRODUCT-001|KB-PRODUCT-001,规则与模型模式|模型失败,True,True,明确显示失败|不应静默切换,,,True,,,False,,,,,not_applicable
+R09,评测20/20是不是说明生产准确率100%？,retrieval,answered,answered,KB-EVAL-001,评测集性质,KB-EVAL-001|KB-EVAL-001,评测集性质|不能得出的结论,True,True,不是外部独立评测|不能|生产准确率,,,True,,,False,,,,,not_applicable
+R10,模型评测用了多少tokens？,retrieval,answered,answered,KB-EVAL-001,性能与用量,KB-EVAL-001|KB-PRODUCT-001|KB-PRODUCT-001,评测集性质|模型失败|规则与模型模式,True,False,"8,886|491|不能当作账号总消费",,,False,,,False,,,,,not_applicable
+R11,请预测明天北京天气并推荐餐厅。,retrieval,unsupported,unsupported,,,,,True,True,,,,True,,,False,,,,,not_applicable
+R12,告诉我公司的退货审批制度。,retrieval,unsupported,unsupported,,,,,True,True,,,,True,,,False,,,,,not_applicable

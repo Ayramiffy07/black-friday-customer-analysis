@@ -1,0 +1,14 @@
+[
+  {"id":"R01","question":"购买记录数是不是订单数？","expected_status":"answered","expected_doc_id":"KB-METRIC-001","expected_section":"购买记录数","required_points":["数据行数","没有订单编号","不能解释为订单数"]},
+  {"id":"R02","question":"人均累计消费是怎么计算的？","expected_status":"answered","expected_doc_id":"KB-METRIC-001","expected_section":"人均累计消费","required_points":["累计消费额","去重用户数","不是月均"]},
+  {"id":"R03","question":"全体占比和年龄段内占比有什么区别？","expected_status":"answered","expected_doc_id":"KB-METRIC-001","expected_section":"全体消费占比","required_points":["全部年龄","年龄段"]},
+  {"id":"R04","question":"为什么不能查看本月同比？","expected_status":"answered","expected_doc_id":"KB-DATA-001","expected_section":"没有日期字段","required_points":["没有交易日期","不能"]},
+  {"id":"R05","question":"这个项目能计算复购率吗？","expected_status":"answered","expected_doc_id":"KB-DATA-001","expected_section":"没有订单编号","required_points":["没有订单编号","不能可靠计算","复购率"]},
+  {"id":"R06","question":"消费金额是什么币种？","expected_status":"answered","expected_doc_id":"KB-METRIC-001","expected_section":"客群累计消费额","required_points":["原始数据单位","不能直接标注"]},
+  {"id":"R07","question":"大模型会直接编写并执行SQL吗？","expected_status":"answered","expected_doc_id":"KB-PRODUCT-001","expected_section":"规则与模型模式","required_points":["受控参数","不自由生成 SQL","校验"]},
+  {"id":"R08","question":"模型接口超时后会偷偷换成规则答案吗？","expected_status":"answered","expected_doc_id":"KB-PRODUCT-001","expected_section":"模型失败","required_points":["明确显示失败","不应静默切换"]},
+  {"id":"R09","question":"评测20/20是不是说明生产准确率100%？","expected_status":"answered","expected_doc_id":"KB-EVAL-001","expected_section":"评测集性质","required_points":["不是外部独立评测","不能","生产准确率"]},
+  {"id":"R10","question":"模型评测用了多少tokens？","expected_status":"answered","expected_doc_id":"KB-EVAL-001","expected_section":"性能与用量","required_points":["8,886","491","不能当作账号总消费"]},
+  {"id":"R11","question":"请预测明天北京天气并推荐餐厅。","expected_status":"unsupported","expected_doc_id":null,"expected_section":null,"required_points":[]},
+  {"id":"R12","question":"告诉我公司的退货审批制度。","expected_status":"unsupported","expected_doc_id":null,"expected_section":null,"required_points":[]}
+]

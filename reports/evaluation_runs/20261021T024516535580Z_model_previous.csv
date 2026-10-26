@@ -1,0 +1,2 @@
+﻿id,group,question,mode,expected,actual,correct,numeric_match,elapsed_ms,prompt_tokens,completion_tokens,decision_source,model_called,error,plan
+D06,unsupported,上个季度女性复购率多少？,model,unsupported,unsupported,True,,13756.64,466,25,validated_model_plan,True,,"{""intent"": ""unsupported"", ""age"": null, ""gender"": null, ""denominator"": ""all"", ""reason"": ""orders""}"

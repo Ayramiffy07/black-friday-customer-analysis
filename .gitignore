@@ -8,3 +8,4 @@ venv/
 .env.*
 !.env.example
 .streamlit/secrets.toml
+work/

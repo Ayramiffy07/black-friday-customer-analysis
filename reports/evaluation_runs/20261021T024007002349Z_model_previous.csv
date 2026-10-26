@@ -1,0 +1,6 @@
+﻿id,group,question,mode,expected,actual,correct,numeric_match,elapsed_ms,prompt_tokens,completion_tokens,error,plan
+D01,standard,哪些客群消费贡献最高？,model,answered,answered,True,True,29287.95,465,24,,"{""intent"": ""ranking"", ""age"": null, ""gender"": null, ""denominator"": ""all"", ""reason"": null}"
+D02,paraphrase,26到35岁的女士，花的钱占同龄人总消费几成？,model,answered,answered,True,True,6232.13,474,26,,"{""intent"": ""segment"", ""age"": ""26-35"", ""gender"": ""F"", ""denominator"": ""age"", ""reason"": null}"
+D03,paraphrase,年龄26到35的男士占全部消费多少？,model,answered,answered,True,True,6118.04,469,26,,"{""intent"": ""segment"", ""age"": ""26-35"", ""gender"": ""M"", ""denominator"": ""all"", ""reason"": null}"
+D04,missing,女性贡献了多少消费额？,model,clarify,clarify,True,,5326.03,464,27,,"{""intent"": ""clarify"", ""age"": null, ""gender"": null, ""denominator"": ""all"", ""reason"": ""missing_conditions""}"
+D05,ambiguous,26-35岁女性占全体和该年龄段消费额多少？,model,clarify,answered,False,,6106.14,472,26,,"{""intent"": ""segment"", ""age"": ""26-35"", ""gender"": ""F"", ""denominator"": ""all"", ""reason"": null}"

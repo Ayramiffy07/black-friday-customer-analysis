@@ -1,0 +1,6 @@
+﻿id,group,question,mode,expected,actual,correct,numeric_match,elapsed_ms,prompt_tokens,completion_tokens,decision_source,model_called,error,plan
+H06,segment,0-17岁女性占全部用户消费的比例是多少？,model,answered,answered,True,True,13777.72,470,26,validated_model_plan,True,,"{""intent"": ""segment"", ""age"": ""0-17"", ""gender"": ""F"", ""denominator"": ""all"", ""reason"": null}"
+H07,missing,46-50岁的人消费贡献多少？,model,clarify,clarify,True,,2427.2,467,27,validated_model_plan,True,,"{""intent"": ""clarify"", ""age"": null, ""gender"": null, ""denominator"": ""all"", ""reason"": ""missing_conditions""}"
+H08,missing,男士消费贡献占几成？,model,clarify,clarify,True,,2060.09,465,27,validated_model_plan,True,,"{""intent"": ""clarify"", ""age"": null, ""gender"": null, ""denominator"": ""all"", ""reason"": ""missing_conditions""}"
+H09,invalid_age,18-30岁女性的消费贡献,model,clarify,clarify,True,,1844.44,465,25,validated_model_plan,True,,"{""intent"": ""clarify"", ""age"": null, ""gender"": null, ""denominator"": ""all"", ""reason"": ""ambiguous""}"
+H10,multi_segment,比较18-25与36-45岁男性的消费贡献,model,clarify,clarify,True,,2803.16,470,25,validated_model_plan,True,,"{""intent"": ""clarify"", ""age"": null, ""gender"": null, ""denominator"": ""all"", ""reason"": ""ambiguous""}"

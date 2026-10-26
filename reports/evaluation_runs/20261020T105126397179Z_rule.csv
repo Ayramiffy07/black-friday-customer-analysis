@@ -1,0 +1,2 @@
+﻿id,group,question,mode,expected,actual,correct,numeric_match,elapsed_ms,prompt_tokens,completion_tokens,decision_source,model_called,error,plan
+D10,missing,那她们呢？,rule,clarify,interrupted,False,,0.01,,,rule,,user_interrupted_usage_unknown,null

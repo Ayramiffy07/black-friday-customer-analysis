@@ -1,0 +1,41 @@
+{
+  "suite": "holdout",
+  "mode": "model",
+  "model": "deepseek-flash",
+  "connection": "direct",
+  "selected_ids": [
+    "H16",
+    "H17",
+    "H18",
+    "H19",
+    "H20"
+  ],
+  "attempted_ids": [
+    "H16",
+    "H17",
+    "H18",
+    "H19",
+    "H20"
+  ],
+  "utc": "20261021T064436900574Z",
+  "case_sha256": "de265426f80901b701fae4840c25b00717aba4268d01516410484bdfb114adda",
+  "prompt_sha256": "de74f73fe1b588691b7b664022de99da63837cbc2b1c0ce1533baee4734e00f1",
+  "freeze": {
+    "suite": "holdout_v1",
+    "created_utc": "2026-10-21T03:23:49.419222+00:00",
+    "sha256": {
+      "prompts/query_plan_v1.txt": "de74f73fe1b588691b7b664022de99da63837cbc2b1c0ce1533baee4734e00f1",
+      "controlled_query.py": "912bf806eb2112cf1130e8ec3f9282a6b8b6221703c683555ecb64c5529b30cf",
+      "19_metric_assistant.py": "6bfb048304df91c2ef88f31e371bffa59834c06e4e19bcdcf16ac1276607554d",
+      "metric_store.py": "b13f0016c966a77102c6f709c1460f1e73629baacc8c9340cd996eacdc5f0eb8",
+      "scripts/evaluate_query.py": "7a61182c94718763e09877ecfbad0086af21c2e77e14a8ec7e639c9ec311f923",
+      "evals/query_holdout_v1.json": "de265426f80901b701fae4840c25b00717aba4268d01516410484bdfb114adda",
+      "reports/sql_customer_contribution.csv": "ef3dd214bc58443fa11937a42b58310e08eb4751cbcf58ca3522aeed67d6a3c0",
+      "sql/customer_contribution.sql": "340608e1f6bbf22decafdf066797b36e9fe9730f4be93203b571b65d7afe60f9",
+      "sql/demo_customer_contribution.sql": "fcce9a3f8378c73bec59161e3c52b344c64ba7af6fa99601d812225542a83f40",
+      "sql/demo_selected_customer_contribution.sql": "01670c8de09a08926361769929e2e4b464435bc7c32786443e620f4a8de92a66",
+      "sql/selected_customer_contribution.sql": "fa35a9b50b456be518d38bef4da5b887abf8973af3e268985ddad7990a91f3e7"
+    },
+    "note": "AI-authored pre-run acceptance set; labels require human review. Not external independent evaluation."
+  }
+}

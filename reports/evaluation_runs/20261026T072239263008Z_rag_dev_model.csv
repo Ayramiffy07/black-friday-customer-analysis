@@ -1,0 +1,2 @@
+﻿id,question,mode,expected_status,actual_status,expected_doc_id,expected_section,cited_doc_ids,cited_sections,status_correct,citation_correct,required_points,point_hits,points_complete,automatic_pass,answer,error_code,model_called,prompt_version,latency_ms,prompt_tokens,completion_tokens,total_tokens,human_review
+R10,模型评测用了多少tokens？,model,answered,answered,KB-EVAL-001,性能与用量,KB-EVAL-001,性能与用量,True,True,"8,886|491|不能当作账号总消费","8,886|491|不能当作账号总消费",True,True,"冻结验收的模型路径记录输入 8,886 tokens、输出 491 tokens；该数据不含全部开发测试和连接排查，不能当作账号总消费。",,True,rag_answer_v2,13186.32,526,52,578,pending
